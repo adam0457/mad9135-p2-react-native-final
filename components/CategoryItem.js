@@ -1,12 +1,12 @@
 
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 
-export default function CategoryItem({product}){
+export default function CategoryItem({product, onPress}){
 
   return (
-            <View>
+            <TouchableOpacity onPress = {onPress}>
                   <Text>{product.category}</Text>
-            </View>
+            </TouchableOpacity>
   )
 
 }
