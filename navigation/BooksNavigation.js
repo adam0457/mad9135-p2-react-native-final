@@ -10,8 +10,8 @@ export default function BooksNavigation(){
 
   return(
           <Stack.Navigator>
-              <Stack.Screen name="Books List" component={Books} /> 
-              <Stack.Screen name="BookDetails" component={BookDetails} />
+              <Stack.Screen name="Categories" component={Categories} /> 
+              <Stack.Screen name="SecondNavigation" component={SecondNavigation} options={{headerShown:false}} /> 
           </Stack.Navigator>
   )
 }

@@ -4,7 +4,6 @@ import {View, Text, TouchableOpacity} from 'react-native'
 export default function BookItem({book, onPress}){
 
 
-
   return(
 
     <TouchableOpacity onPress = {onPress}>

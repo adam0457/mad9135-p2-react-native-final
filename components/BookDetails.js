@@ -4,15 +4,16 @@ import { useBook } from '../context/BookContext'
 
 
 export default function BookDetails({route}){
-  
   const [books] = useBook()
+  const selectedCategory = books.find(item => item.categoryId === route.params.categoryId)
+  const selectedBook = selectedCategory.items.find(item => item.bookId === route.params.bookId)
+  
 
-  const selectedBook = books.find(item => item.bookId === route.params.id)
 
   return(
 
     <Text>
-        {selectedBook.bookName}
+      {selectedBook.bookName}
     </Text>
   )
 }
