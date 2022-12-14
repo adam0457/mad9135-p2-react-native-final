@@ -7,7 +7,8 @@ export default function CategoryItem({product, onPress}){
             <TouchableOpacity onPress = {onPress}>
                   
                   <View>
-                      <Image style = {styles.img} source={require(`../assets/img/${product.image}.jpg`)} />
+                      {/* <Image style = {styles.img} source={require(`../assets/img/${product.image}.jpg`)} /> */}
+                      <Image style = {styles.img} source={require("../assets/img/7habits.jpg")} />
                       <Text>{product.category}</Text>
                   </View>
                   

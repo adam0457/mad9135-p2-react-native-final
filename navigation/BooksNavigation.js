@@ -1,6 +1,6 @@
 import Books from "../components/Books";
 import BookDetails from "../components/BookDetails";
-import Categories from "../components/categories";
+import Categories from "../components/Categories";
 import { createStackNavigator } from "@react-navigation/stack";
 import SecondNavigation from "./SecondNavigation";
 

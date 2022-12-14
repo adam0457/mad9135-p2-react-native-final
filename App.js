@@ -3,11 +3,10 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Home from './screens/Home';
+import Home from './components/Home';
 import Books from './components/Books';
-import Favorites from './screens/Favorites';
+import Favorites from './components/Favorites';
 import { BookProvider } from './context/BookContext';
-import Categories from './components/categories';
 import BooksNavigation from './navigation/BooksNavigation';
 
 

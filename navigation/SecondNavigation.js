@@ -9,7 +9,7 @@ const Stack = createStackNavigator()
 
 export default function SecondNavigation(props){
   const categoryId = props.route.params.id
-  console.log(categoryId)
+  // console.log(categoryId)
   return(
           <Stack.Navigator>
               <Stack.Screen name="List of Books">

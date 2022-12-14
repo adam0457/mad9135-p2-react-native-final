@@ -7,15 +7,15 @@ export default function Books(props){
 
     const [books] = useBook()
 
-    console.log(props)
+    // console.log(props)
   
    const selectedCategory = books.find(item => item.categoryId === props.categoryId)
 
     // selectedCategory.items is an array of books from the same category
-    console.log(selectedCategory.items)
+    // console.log(selectedCategory.items)
     let booksArr = []
     booksArr = selectedCategory.items
-    console.log(booksArr)
+    // console.log(booksArr)
 
   return(
 
