@@ -12,7 +12,6 @@ export default function Categories({navigation}){
           <FlatList
               data = {books}
               renderItem = {({item})=>{
-                  // return <CategoryItem product = {item} onPress = {()=> navigation.navigate('Books', {id:item.categoryId})} />
                   return <CategoryItem product = {item} onPress = {()=> navigation.navigate('SecondNavigation', {id:item.categoryId})} />
               }}
 

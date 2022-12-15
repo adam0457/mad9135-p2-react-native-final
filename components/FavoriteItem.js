@@ -1,20 +1,21 @@
 import React from 'react'
-import {View, Text, StyleSheet, Image} from 'react-native'
+import {View, Text, StyleSheet, Image, Pressable} from 'react-native'
+import { AntDesign } from '@expo/vector-icons';
 
-export default function FavoriteItem({favoriteBook}){
+export default function FavoriteItem({removeFromFavorites, favoriteBook}){
 
-  // console.log(`the favorite item: ${favoriteBook}`)
-  
+  function handleDelete(){
+    removeFromFavorites(favoriteBook)
+  }
 
   return(
-
-   
           <View>
-              {/* <Image style = {styles.img} source={require(`../assets/img/${book.image}.jpg`)} /> */}
-              {/* <Image style = {styles.img} source={require("../assets/img/7habits.jpg")} /> */}
+              <Image style = {styles.img} source={favoriteBook.image}/>
               <Text>{favoriteBook.bookName}</Text>
+              <Pressable onPress={handleDelete}>
+                  <AntDesign name="delete" size={32} color="red" />
+              </Pressable>
           </View>
-   
   )
 }
 
