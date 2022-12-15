@@ -15,16 +15,17 @@ export default function BookDetails({route}){
   const [like, setLike] = useState(true)
   let tempArr = []
 
-  if(myFavorites){
-
+  if(myFavorites){ 
     tempArr = myFavorites
   }
 
   function handleLike(){
-    tempArr = [...tempArr, selectedBook]
-    // console.log(`that is the tempsArr:${tempArr}`)
-    setMyFavorites([...myFavorites, selectedBook])
-    setFavoritesInLocalStorage([...tempArr])
+    if(!tempArr.some(element => element.bookId === selectedBook.bookId)){
+      tempArr = [...tempArr, selectedBook]
+      setMyFavorites([...myFavorites, selectedBook])
+      setFavoritesInLocalStorage([...tempArr])
+    }
+  
     changeIconName()
   }
 
@@ -45,8 +46,7 @@ export default function BookDetails({route}){
   return(
 
     <View>
-      {/* <Image style = {styles.img} source={require(`../assets/img/${selectedBook.image}.jpg`)}/> */}
-      <Image style = {styles.img} source={require("../assets/img/7habits.jpg")}/>
+      <Image style = {styles.img} source={selectedBook.image}/>
       <Text>{selectedBook.bookName}</Text>
       <Pressable onPress={handleLike} >
           <MaterialIcons name={like ? "favorite-outline" : "favorite" } size={32} color="red" />

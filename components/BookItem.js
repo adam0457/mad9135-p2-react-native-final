@@ -8,8 +8,7 @@ export default function BookItem({book, onPress}){
 
     <TouchableOpacity onPress = {onPress}>
           <View>
-              {/* <Image style = {styles.img} source={require(`../assets/img/${book.image}.jpg`)} /> */}
-              <Image style = {styles.img} source={require("../assets/img/7habits.jpg")} />
+              <Image style = {styles.img} source={book.image} />
               <Text>{book.bookName}</Text>
           </View>
     </TouchableOpacity>

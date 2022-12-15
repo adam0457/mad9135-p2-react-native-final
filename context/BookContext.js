@@ -10,7 +10,7 @@ function BookProvider(props){
     const [myFavorites, setMyFavorites] = useState([])
     useEffect(()=>{
       getBooks()
-      // removeFromLocalStorage()
+      removeFromLocalStorage()
       getMyFavoritesFromAsyncStorage()
     },[])
 
