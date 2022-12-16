@@ -10,7 +10,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 export default function BookDetails({route}){
-  const [books, myFavorites, setMyFavorites] = useBook()
+  const [books, myFavorites, setMyFavorites, myChart, setMyChart] = useBook()
   const selectedCategory = books.find(item => item.categoryId === route.params.categoryId)
   const selectedBook = selectedCategory.items.find(item => item.bookId === route.params.bookId)
 
@@ -32,6 +32,11 @@ useEffect(()=>{
   let tempArr = []
   if(myFavorites){ 
     tempArr = myFavorites
+  }
+
+  let tempChart = []
+  if(myChart){
+    tempChart = myChart
   }
 
   function handleLike(){
@@ -65,7 +70,20 @@ useEffect(()=>{
   }
 
   function handleBtnAdd(){
-    console.log('Add to chart')
+    if(!tempChart.some(element => element.bookId === selectedBook.bookId)){
+      tempChart = [...tempChart, selectedBook]
+      setMyChart([...myChart, selectedBook])
+      setMyChartInLocalStorage([...tempChart])
+    }
+  }
+
+  async function setMyChartInLocalStorage(){
+        try {
+          const chart = JSON.stringify(myChart)
+          await AsyncStorage.setItem('chart_storage_Key', chart)
+        } catch (e) {
+          console.log(e.message)
+        }
   }
 
   return(
@@ -94,7 +112,11 @@ const styles = StyleSheet.create({
     
     marginLeft: 20,
     marginRight:20,
-    marginBottom:20
+    marginBottom:20,
+    backgroundColor:"white",
+    paddingLeft:10,
+    paddingRight:10,
+    
   },
   
   bookDetailsImg:{

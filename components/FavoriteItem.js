@@ -9,24 +9,47 @@ export default function FavoriteItem({removeFromFavorites, favoriteBook}){
   }
 
   return(
-          <View>
-              <Image style = {styles.img} source={favoriteBook.image}/>
-              <Text>{favoriteBook.bookName}</Text>
-              <Pressable onPress={handleDelete}>
-                  <AntDesign name="delete" size={32} color="red" />
-              </Pressable>
+          <View style = {styles.bookItemContainer}>
+                <Image style = {styles.img} source={favoriteBook.image} />
+                <View style={styles.bookItemTextContent}>
+                    <Text  >{favoriteBook.bookName}</Text>
+                    <Text>by <Text style={styles.author}>{favoriteBook.author}</Text></Text>
+                    <Text>${favoriteBook.price}</Text>
+                </View>
+                <Pressable onPress={handleDelete}>
+                    <AntDesign name="delete" size={32} color="red" />
+                </Pressable>
           </View>
   )
 }
 
 const styles = StyleSheet.create({
-  container:{
+  bookItemContainer:{
     flex:1,
-  
+    flexDirection:'row',
+    justifyContent:"space-between",
+    
+    alignItems: "center",
+    margin: 10,
+    padding:10,
+    backgroundColor:"white",
+    borderBottomWidth:5,
+    borderRadius:8
 
   },
   img:{
-    width: 150,
-    height:150
+    width: 100,
+    height:100,
+    marginRight:10
+  },
+  bookItemTextContent:{
+    width:200,
+    flex:1,
+    flexDirection:"column",
+    justifyContent:"space-around",
+    fontWeight:'bold'
+  },
+  author:{
+    color:"blue"
   }
 })

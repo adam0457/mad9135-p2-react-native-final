@@ -29,7 +29,10 @@ const styles = StyleSheet.create({
     margin: 10,
     padding:10,
     backgroundColor:"gainsboro",
-    borderRadius:8
+    borderRadius:8,
+    borderBottomWidth:5,
+    borderBottomColor:"cornflowerblue"
+
 
   },
   img:{

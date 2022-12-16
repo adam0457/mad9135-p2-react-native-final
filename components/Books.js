@@ -8,7 +8,7 @@ export default function Books(props){
 
     const [books] = useBook()
 
-    // console.log(props)
+    console.log(`those are the books: ${books}`)
   
    const selectedCategory = books.find(item => item.categoryId === props.categoryId)
 
