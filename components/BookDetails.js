@@ -93,7 +93,7 @@ useEffect(()=>{
               <Text>{selectedBook.bookName}</Text>
                     <Image style = {styles.bookDetailsImg} source={selectedBook.image}/>
                     <Pressable onPress={handleLike} >
-                        <MaterialIcons name={like ? "favorite" : "favorite-outline" } size={40} color="red" />
+                        <MaterialIcons name={like ? "favorite" : "favorite-outline" } size={40} color="hsl(349,100%,24%)" />
                     </Pressable> 
               <Text style={styles.price} >${selectedBook.price}</Text>
               <Text>{selectedBook.description}</Text>

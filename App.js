@@ -20,7 +20,7 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator
           screenOptions={{
-            headerStyle: {backgroundColor: 'cornflowerblue'},
+            headerStyle: {backgroundColor: 'hsl(349,100%,24%)'},
             headerTintColor: 'white',
             activeTintColor: 'hsl(275, 100%, 23%)', 
             inactiveTintColor: 'hsl(275, 15%, 60%)',
@@ -32,18 +32,18 @@ export default function App() {
         <Tab.Screen name="Books" component={BooksNavigation} options={{
           headerShown:false,
           tabBarIcon: ({ focused, size, color }) => (
-            <Entypo name="open-book" size={24} color = "cornflowerblue" /> )
+            <Entypo name="open-book" size={24} color = "hsl(349,100%,24%)" /> )
 
           }}
           />
         <Tab.Screen name="Favorites" component={Favorites}  options={{
                                         tabBarIcon: ({ focused, size, color }) => (
-                                          <MaterialIcons name= "favorite-outline" size={24} color="cornflowerblue" />
+                                          <MaterialIcons name= "favorite-outline" size={24} color="hsl(349,100%,24%)" />
                                       ),
                                     }} />
         <Tab.Screen name="Cart" component={Chart}  options={{
                                         tabBarIcon: ({ focused, size, color }) => (
-                                        <MaterialCommunityIcons name="cart-outline" size={24} color = "cornflowerblue" />
+                                        <MaterialCommunityIcons name="cart-outline" size={24} color = "hsl(349,100%,24%)" />
                                       ),
                                     }} />
       </Tab.Navigator>

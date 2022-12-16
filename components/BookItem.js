@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     backgroundColor:"gainsboro",
     borderRadius:8,
     borderBottomWidth:5,
-    borderBottomColor:"cornflowerblue"
+    borderBottomColor:"hsl(349,100%,24%)"
 
 
   },

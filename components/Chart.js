@@ -3,6 +3,8 @@ import {View, Text, FlatList} from 'react-native'
 import { useBook } from '../context/BookContext'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ChartItem from './ChartItem';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 export default function Chart(){
 

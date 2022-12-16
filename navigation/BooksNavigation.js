@@ -11,7 +11,7 @@ export default function BooksNavigation(){
   return(
           <Stack.Navigator
             screenOptions={{
-              headerStyle: {backgroundColor: 'cornflowerblue'},
+              headerStyle: {backgroundColor: 'hsl(349,100%,24%)'},
               headerTintColor: 'white'
             }}
           >

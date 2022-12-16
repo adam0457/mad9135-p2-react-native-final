@@ -1,7 +1,21 @@
 import React from 'react'
-import {View, Text, StyleSheet, Image, Pressable} from 'react-native'
+import {View, Text, StyleSheet, Image, Pressable, Alert} from 'react-native'
 
 export default function ChartItem({book, removeFromCart}){
+
+  const removeAlert = () =>
+    Alert.alert(
+      "Remove Item",
+      "You are about to remove this book from your cart",
+      [
+        {
+          text: "Cancel",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel"
+        },
+        { text: "OK", onPress: () => handleDeleteBtn() }
+      ]
+    );
 
   function handleDeleteBtn(){
     removeFromCart(book)
@@ -14,7 +28,7 @@ export default function ChartItem({book, removeFromCart}){
                     <Text>by <Text style={styles.author}>{book.author}</Text></Text>
                     <Text  >${book.price}</Text>
                 </View>
-                <Pressable style={styles.deleteBtn} onPress={handleDeleteBtn}>
+                <Pressable style={styles.deleteBtn} onPress={removeAlert}>
                     <Text style={styles.textDeleteBtn}>Remove</Text>
                 </Pressable>
       </View>
@@ -58,7 +72,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     borderRadius: 4,
     elevation: 3,
-    backgroundColor: 'red',
+    backgroundColor: 'hsl(349,100%,24%)',
     marginTop:20
   },
 
@@ -67,6 +81,6 @@ const styles = StyleSheet.create({
     lineHeight: 21,
     fontWeight: 'bold',
     letterSpacing: 0.25,
-    color: 'black',
+    color: 'white',
   }
 })

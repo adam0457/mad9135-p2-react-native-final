@@ -23,13 +23,12 @@ export default function CategoryItem({product, onPress}){
 const styles = StyleSheet.create({
   container:{
     
-    backgroundColor: 'black',
+    backgroundColor: 'white',
     width: 350,
     marginBottom: 16,
     padding: 10,
     borderRadius: 8
-    // marginVertical: 8,
-    // marginHorizontal: 8,
+  
   },
   img:{
     width: 100,
@@ -39,7 +38,7 @@ const styles = StyleSheet.create({
 
   category:{
     fontSize:32,
-    color:"cornflowerblue"
+    color:"hsl(349,100%,24%)"
     
   }
 })

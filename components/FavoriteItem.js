@@ -17,7 +17,7 @@ export default function FavoriteItem({removeFromFavorites, favoriteBook}){
                     <Text>${favoriteBook.price}</Text>
                 </View>
                 <Pressable onPress={handleDelete}>
-                    <AntDesign name="delete" size={32} color="red" />
+                    <AntDesign name="delete" size={32} color="hsl(349,100%,24%)" />
                 </Pressable>
           </View>
   )
