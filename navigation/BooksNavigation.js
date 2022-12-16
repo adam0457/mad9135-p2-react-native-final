@@ -9,7 +9,12 @@ const Stack = createStackNavigator()
 export default function BooksNavigation(){
 
   return(
-          <Stack.Navigator>
+          <Stack.Navigator
+            screenOptions={{
+              headerStyle: {backgroundColor: 'cornflowerblue'},
+              headerTintColor: 'white'
+            }}
+          >
               <Stack.Screen name="Categories" component={Categories} /> 
               <Stack.Screen name="SecondNavigation" component={SecondNavigation} options={{headerShown:false}} /> 
           </Stack.Navigator>

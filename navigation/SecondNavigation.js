@@ -7,7 +7,12 @@ const Stack = createStackNavigator()
 export default function SecondNavigation(props){
   const categoryId = props.route.params.id
   return(
-          <Stack.Navigator>
+          <Stack.Navigator
+            screenOptions={{
+              headerStyle: {backgroundColor: 'cornflowerblue'},
+              headerTintColor: 'white'
+            }}
+          >
               <Stack.Screen name="List of Books">
                 {(props) => <Books {...props} categoryId = {categoryId}/>}
               </Stack.Screen>

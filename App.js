@@ -16,7 +16,15 @@ export default function App() {
   return (
     <BookProvider>
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+          screenOptions={{
+            headerStyle: {backgroundColor: 'cornflowerblue'},
+            headerTintColor: 'white',
+            activeTintColor: 'hsl(275, 100%, 23%)', 
+            inactiveTintColor: 'hsl(275, 15%, 60%)',
+            style: {backgroundColor: 'hsl(275, 100%, 93%)'}
+          }}
+      >
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Books" component={BooksNavigation} options={{headerShown:false}} />
         <Tab.Screen name="Favorites" component={Favorites} />

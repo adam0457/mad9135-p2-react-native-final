@@ -7,22 +7,44 @@ export default function BookItem({book, onPress}){
   return(
 
     <TouchableOpacity onPress = {onPress}>
-          <View>
+          <View style = {styles.bookItemContainer}>
               <Image style = {styles.img} source={book.image} />
-              <Text>{book.bookName}</Text>
+              <View style={styles.bookItemTextContent}>
+                  <Text  >{book.bookName}</Text>
+                  <Text>by <Text style={styles.author}>{book.author}</Text></Text>
+                  <Text>${book.price}</Text>
+              </View>
           </View>
     </TouchableOpacity>
   )
 }
 
 const styles = StyleSheet.create({
-  container:{
+  bookItemContainer:{
     flex:1,
-  
+    flexDirection:'row',
+    justifyContent:"space-between",
+    
+    alignItems: "center",
+    margin: 10,
+    padding:10,
+    backgroundColor:"gainsboro",
+    borderRadius:8
 
   },
   img:{
-    width: 150,
-    height:150
+    width: 100,
+    height:100,
+    marginRight:10
+  },
+  bookItemTextContent:{
+    width:200,
+    flex:1,
+    flexDirection:"column",
+    justifyContent:"space-around",
+    fontWeight:'bold'
+  },
+  author:{
+    color:"blue"
   }
 })

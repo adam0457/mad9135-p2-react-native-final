@@ -4,6 +4,9 @@ import {View, Text, Image, StyleSheet, Pressable} from 'react-native'
 import { useBook } from '../context/BookContext'
 import { MaterialIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
+
 
 
 export default function BookDetails({route}){
@@ -62,14 +65,15 @@ useEffect(()=>{
   }
   
   return(
-
-    <View>
-      <Image style = {styles.img} source={selectedBook.image}/>
-      <Text>{selectedBook.bookName}</Text>
-      <Pressable onPress={handleLike} >
-          <MaterialIcons name={like ? "favorite" : "favorite-outline" } size={32} color="red" />
-      </Pressable>  
-    </View>
+    <SafeAreaView>
+        <View>
+          <Image style = {styles.img} source={selectedBook.image}/>
+          <Text>{selectedBook.bookName}</Text>
+          <Pressable onPress={handleLike} >
+              <MaterialIcons name={like ? "favorite" : "favorite-outline" } size={32} color="red" />
+          </Pressable>  
+        </View>
+    </SafeAreaView>
   )
 }
 

@@ -3,6 +3,7 @@ import {View, Text, FlatList} from 'react-native'
 import { useBook } from '../context/BookContext'
 import FavoriteItem from './FavoriteItem'
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 export default function Favorites(){
@@ -28,17 +29,18 @@ export default function Favorites(){
 
   if(myFavorites && myFavorites.length > 0){
     return(
+      <SafeAreaView>
+        <FlatList
+          data = {myFavorites}
+            renderItem = {({item}) => {
+                  console.log(`the favorite :${item.bookName}`)
+                return <FavoriteItem removeFromFavorites={removeFromFavorites} favoriteBook={item}  />
+            }}
 
-      <FlatList
-        data = {myFavorites}
-          renderItem = {({item}) => {
-                console.log(`the favorite :${item.bookName}`)
-              return <FavoriteItem removeFromFavorites={removeFromFavorites} favoriteBook={item}  />
-          }}
-
-          keyExtractor = {(item,index) => index}
-        
-      />
+            keyExtractor = {(item,index) => index}
+          
+        />
+      </SafeAreaView>
     )
     
   }
