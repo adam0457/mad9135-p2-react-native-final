@@ -22,8 +22,10 @@ export default function App() {
             headerTintColor: 'white',
             activeTintColor: 'hsl(275, 100%, 23%)', 
             inactiveTintColor: 'hsl(275, 15%, 60%)',
-            style: {backgroundColor: 'hsl(275, 100%, 93%)'}
+            
           }}
+
+          
       >
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Books" component={BooksNavigation} options={{headerShown:false}} />

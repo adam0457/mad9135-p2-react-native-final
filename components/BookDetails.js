@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
-import {View, Text, Image, StyleSheet, Pressable} from 'react-native'
+import {View, Text, Image, StyleSheet, Pressable, ScrollView} from 'react-native'
 import { useBook } from '../context/BookContext'
 import { MaterialIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -63,28 +63,67 @@ useEffect(()=>{
   function changeIconName(){
     setLike(!like)
   }
-  
+
+  function handleBtnAdd(){
+    console.log('Add to chart')
+  }
+
   return(
     <SafeAreaView>
-        <View>
-          <Image style = {styles.img} source={selectedBook.image}/>
-          <Text>{selectedBook.bookName}</Text>
-          <Pressable onPress={handleLike} >
-              <MaterialIcons name={like ? "favorite" : "favorite-outline" } size={32} color="red" />
-          </Pressable>  
-        </View>
+        <ScrollView style={styles.bookDetailsContainer}>
+              <Text>{selectedBook.author}</Text>
+              <Text>{selectedBook.bookName}</Text>
+                    <Image style = {styles.bookDetailsImg} source={selectedBook.image}/>
+                    <Pressable onPress={handleLike} >
+                        <MaterialIcons name={like ? "favorite" : "favorite-outline" } size={40} color="red" />
+                    </Pressable> 
+              <Text style={styles.price} >${selectedBook.price}</Text>
+              <Text>{selectedBook.description}</Text>
+              <Pressable style={styles.button} onPress={handleBtnAdd}>
+                      <Text style={styles.textBtn} >Add to Chart</Text>
+              </Pressable>
+
+              
+        </ScrollView>
     </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
-  container:{
-    flex:1,
-  
-
+  bookDetailsContainer:{
+    
+    marginLeft: 20,
+    marginRight:20,
+    marginBottom:20
   },
-  img:{
+  
+  bookDetailsImg:{
     width: 250,
-    height:250
+    height:250,
+    marginBottom:10,
+    marginTop:10
+  },
+  price:{
+    marginBottom:10,
+    marginTop:10
+  },
+  button:{
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: 'green',
+    marginTop:20
+  },
+
+  textBtn:{
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: 'bold',
+    letterSpacing: 0.25,
+    color: 'white',
   }
+
 })
