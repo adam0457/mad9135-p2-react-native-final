@@ -1,10 +1,11 @@
 import React from 'react'
 import {View, Text, StyleSheet, Image, Pressable} from 'react-native'
 
-export default function ChartItem({book}){
+export default function ChartItem({book, removeFromCart}){
 
-    // console.log(`We are in chart item: ${book}`)
-
+  function handleDeleteBtn(){
+    removeFromCart(book)
+  }
   return(
           <View style = {styles.bookItemContainer}>
                 <Image style = {styles.img} source={book.image} />
@@ -13,7 +14,7 @@ export default function ChartItem({book}){
                     <Text>by <Text style={styles.author}>{book.author}</Text></Text>
                     <Text  >${book.price}</Text>
                 </View>
-                <Pressable style={styles.deleteBtn}>
+                <Pressable style={styles.deleteBtn} onPress={handleDeleteBtn}>
                     <Text style={styles.textDeleteBtn}>Remove</Text>
                 </Pressable>
       </View>

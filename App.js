@@ -9,7 +9,7 @@ import Favorites from './components/Favorites';
 import { BookProvider } from './context/BookContext';
 import BooksNavigation from './navigation/BooksNavigation';
 import Chart from './components/Chart';
-import { Entypo, MaterialIcons } from '@expo/vector-icons'; 
+import { Entypo, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons'; 
 
 
 const Tab = createBottomTabNavigator();
@@ -32,18 +32,18 @@ export default function App() {
         <Tab.Screen name="Books" component={BooksNavigation} options={{
           headerShown:false,
           tabBarIcon: ({ focused, size, color }) => (
-            <Entypo name="home" size={24} color = "cornflowerblue" /> )
+            <Entypo name="open-book" size={24} color = "cornflowerblue" /> )
 
           }}
           />
         <Tab.Screen name="Favorites" component={Favorites}  options={{
                                         tabBarIcon: ({ focused, size, color }) => (
-                                          <MaterialIcons name= "favorite" size={24} color="cornflowerblue" />
+                                          <MaterialIcons name= "favorite-outline" size={24} color="cornflowerblue" />
                                       ),
                                     }} />
-        <Tab.Screen name="Chart" component={Chart}  options={{
+        <Tab.Screen name="Cart" component={Chart}  options={{
                                         tabBarIcon: ({ focused, size, color }) => (
-                                        <Entypo name="shopping-cart" size={24} color = "cornflowerblue" />
+                                        <MaterialCommunityIcons name="cart-outline" size={24} color = "cornflowerblue" />
                                       ),
                                     }} />
       </Tab.Navigator>

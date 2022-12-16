@@ -98,7 +98,7 @@ useEffect(()=>{
               <Text style={styles.price} >${selectedBook.price}</Text>
               <Text>{selectedBook.description}</Text>
               <Pressable style={styles.button} onPress={handleBtnAdd}>
-                      <Text style={styles.textBtn} >Add to Chart</Text>
+                      <Text style={styles.textBtn} >Add to Cart</Text>
               </Pressable>
 
               
